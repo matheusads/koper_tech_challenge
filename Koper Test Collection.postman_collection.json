@@ -1,0 +1,778 @@
+{
+	"info": {
+		"_postman_id": "6be364cb-4592-4902-977e-224011904dee",
+		"name": "Koper Test Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Point A",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c8fefdfd-f63b-4617-bad4-b92e8b371f49",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"Status code should be 201\"] = responseCode.code === 201;",
+							"tests[\"Name should be A\"] = jsonData.name === \"A\";",
+							"tests[\"Graph Id should be Mapa SP\"] = jsonData.graph_id === \"Mapa SP\";"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "A",
+							"type": "text"
+						},
+						{
+							"key": "graph_id",
+							"value": "Mapa SP",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/vertex/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"vertex",
+						""
+					]
+				},
+				"description": "Add a point to map.\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Add Point B",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "B",
+							"type": "text"
+						},
+						{
+							"key": "graph_id",
+							"value": "Mapa SP",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/vertex/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"vertex",
+						""
+					]
+				},
+				"description": "Add a point to map.\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Add Point C",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "C",
+							"type": "text"
+						},
+						{
+							"key": "graph_id",
+							"value": "Mapa SP",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/vertex/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"vertex",
+						""
+					]
+				},
+				"description": "Add a point to map.\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Add Point D",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "D",
+							"type": "text"
+						},
+						{
+							"key": "graph_id",
+							"value": "Mapa SP",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/vertex/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"vertex",
+						""
+					]
+				},
+				"description": "Add a point to map.\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Add Point E",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "E",
+							"type": "text"
+						},
+						{
+							"key": "graph_id",
+							"value": "Mapa SP",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/vertex/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"vertex",
+						""
+					]
+				},
+				"description": "Add a point to map.\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Add connections A->B",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "96ebd11c-0a5d-4a8d-a719-70ec2a370b34",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"Status code should be 201\"] = responseCode.code === 201;",
+							"tests[\"Source id should be A\"] = jsonData.source_id === \"A\";",
+							"tests[\"Dest id should be B\"] = jsonData.destination_id === \"B\";",
+							"tests[\"weight should be 10\"] = jsonData.weight === 10;",
+							"tests[\"Graph Id should be Mapa SP\"] = jsonData.graph_id === \"Mapa SP\";"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "source_id",
+							"value": "A",
+							"type": "text"
+						},
+						{
+							"key": "destination_id",
+							"value": "B",
+							"type": "text"
+						},
+						{
+							"key": "weight",
+							"value": "10",
+							"type": "text"
+						},
+						{
+							"key": "graph_id",
+							"value": "Mapa SP",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/edge/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"edge",
+						""
+					]
+				},
+				"description": "Add Edges to the Graph"
+			},
+			"response": []
+		},
+		{
+			"name": "Add connections B->D",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "96ebd11c-0a5d-4a8d-a719-70ec2a370b34",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"Status code should be 201\"] = responseCode.code === 201;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "source_id",
+							"value": "B",
+							"type": "text"
+						},
+						{
+							"key": "destination_id",
+							"value": "D",
+							"type": "text"
+						},
+						{
+							"key": "weight",
+							"value": "15",
+							"type": "text"
+						},
+						{
+							"key": "graph_id",
+							"value": "Mapa SP",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/edge/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"edge",
+						""
+					]
+				},
+				"description": "Add Edges to the Graph"
+			},
+			"response": []
+		},
+		{
+			"name": "Add connections A->C",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "96ebd11c-0a5d-4a8d-a719-70ec2a370b34",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"Status code should be 201\"] = responseCode.code === 201;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "source_id",
+							"value": "A",
+							"type": "text"
+						},
+						{
+							"key": "destination_id",
+							"value": "C",
+							"type": "text"
+						},
+						{
+							"key": "weight",
+							"value": "20",
+							"type": "text"
+						},
+						{
+							"key": "graph_id",
+							"value": "Mapa SP",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/edge/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"edge",
+						""
+					]
+				},
+				"description": "Add Edges to the Graph"
+			},
+			"response": []
+		},
+		{
+			"name": "Add connections C->D",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "96ebd11c-0a5d-4a8d-a719-70ec2a370b34",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"Status code should be 201\"] = responseCode.code === 201;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "source_id",
+							"value": "C",
+							"type": "text"
+						},
+						{
+							"key": "destination_id",
+							"value": "D",
+							"type": "text"
+						},
+						{
+							"key": "weight",
+							"value": "30",
+							"type": "text"
+						},
+						{
+							"key": "graph_id",
+							"value": "Mapa SP",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/edge/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"edge",
+						""
+					]
+				},
+				"description": "Add Edges to the Graph"
+			},
+			"response": []
+		},
+		{
+			"name": "Add connections B->E",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "96ebd11c-0a5d-4a8d-a719-70ec2a370b34",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"Status code should be 201\"] = responseCode.code === 201;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "source_id",
+							"value": "B",
+							"type": "text"
+						},
+						{
+							"key": "destination_id",
+							"value": "E",
+							"type": "text"
+						},
+						{
+							"key": "weight",
+							"value": "50",
+							"type": "text"
+						},
+						{
+							"key": "graph_id",
+							"value": "Mapa SP",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/edge/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"edge",
+						""
+					]
+				},
+				"description": "Add Edges to the Graph"
+			},
+			"response": []
+		},
+		{
+			"name": "Add connections D->E",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "96ebd11c-0a5d-4a8d-a719-70ec2a370b34",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"Status code should be 201\"] = responseCode.code === 201;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "source_id",
+							"value": "D",
+							"type": "text"
+						},
+						{
+							"key": "destination_id",
+							"value": "E",
+							"type": "text"
+						},
+						{
+							"key": "weight",
+							"value": "50",
+							"type": "text"
+						},
+						{
+							"key": "graph_id",
+							"value": "Mapa SP",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/edge/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"edge",
+						""
+					]
+				},
+				"description": "Add Edges to the Graph"
+			},
+			"response": []
+		},
+		{
+			"name": "Add connections other map",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "96ebd11c-0a5d-4a8d-a719-70ec2a370b34",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"Status code should be 201\"] = responseCode.code === 201;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "source_id",
+							"value": "F",
+							"type": "text"
+						},
+						{
+							"key": "destination_id",
+							"value": "G",
+							"type": "text"
+						},
+						{
+							"key": "weight",
+							"value": "50",
+							"type": "text"
+						},
+						{
+							"key": "graph_id",
+							"value": "Mapa Teste",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/edge/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"edge",
+						""
+					]
+				},
+				"description": "Add Edges to the Graph"
+			},
+			"response": []
+		},
+		{
+			"name": "GET Route Success",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bac21f56-4a40-4f8c-965c-92ad77da4e58",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"Status code should be 200\"] = responseCode.code === 200;",
+							"tests[\"response message\"] = jsonData === \"A -> D: distance = 25, path = ['A', 'B', 'D'], cost = 6.25\";"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/routes/?map=Mapa SP&source=A&dest=D&range=10&price=2.5",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"routes",
+						""
+					],
+					"query": [
+						{
+							"key": "map",
+							"value": "Mapa SP"
+						},
+						{
+							"key": "source",
+							"value": "A"
+						},
+						{
+							"key": "dest",
+							"value": "D"
+						},
+						{
+							"key": "range",
+							"value": "10"
+						},
+						{
+							"key": "price",
+							"value": "2.5"
+						}
+					]
+				},
+				"description": "Get minimum route between two connected points, distance and cost."
+			},
+			"response": []
+		},
+		{
+			"name": "GET Route ValidationError",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bac21f56-4a40-4f8c-965c-92ad77da4e58",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"Status code should be 400\"] = responseCode.code === 400;",
+							"tests[\"Price should be a valid number type\"] = jsonData.price[0] === \"A valid number is required.\""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/routes/?map=Mapa SP&source=A&dest=D&range=10&price=TESTE ERROR",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"routes",
+						""
+					],
+					"query": [
+						{
+							"key": "map",
+							"value": "Mapa SP"
+						},
+						{
+							"key": "source",
+							"value": "A"
+						},
+						{
+							"key": "dest",
+							"value": "D"
+						},
+						{
+							"key": "range",
+							"value": "10"
+						},
+						{
+							"key": "price",
+							"value": "TESTE ERROR"
+						}
+					]
+				},
+				"description": "Get minimum route between two connected points, distance and cost."
+			},
+			"response": []
+		},
+		{
+			"name": "GET Route AssertionError",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bac21f56-4a40-4f8c-965c-92ad77da4e58",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"Status code should be 200\"] = responseCode.code === 200;",
+							"tests[\"response message\"] = jsonData === \"F not in Mapa SP\""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/routes/?map=Mapa SP&source=A&dest=F&range=10&price=2.5",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"routes",
+						""
+					],
+					"query": [
+						{
+							"key": "map",
+							"value": "Mapa SP"
+						},
+						{
+							"key": "source",
+							"value": "A"
+						},
+						{
+							"key": "dest",
+							"value": "F"
+						},
+						{
+							"key": "range",
+							"value": "10"
+						},
+						{
+							"key": "price",
+							"value": "2.5"
+						}
+					]
+				},
+				"description": "Get minimum route between two connected points, distance and cost."
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
