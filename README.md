@@ -1,6 +1,6 @@
 **Basic API Project to Python dev role at [Koper](https://koper.com.br/)**
 
-You can find the project scope at [Desafio back-end PDF File](Desafio back-end.pdf) in PT-Br
+You can find the project scope at [Desafio back-end PDF File](https://github.com/matheusads/koper_tech_challenge/blob/master/Desafio%20back-end.pdf) in PT-Br
 
 Tldr: API should return minimum route between two points, previously inserted, and how much it costs.
 
@@ -78,7 +78,7 @@ At ``/edge`` POST should send some like this `{'source_id': 'A', 'destination_id
 **_Weight_**: Integer field, is the 'distance' between these two points.
 
 I didn't add unit tests for these endpoints because is a 'simply' code of DRF. Just put to have Browsable APIs
-and fast way to add data. But have some test in [Postman](Koper Test Collection.postman_collection.json) json file.
+and fast way to add data. But have some test in [Postman](https://github.com/matheusads/koper_tech_challenge/blob/master/Koper%20Test%20Collection.postman_collection.json) json file.
 
 **_The most important part_**
 
