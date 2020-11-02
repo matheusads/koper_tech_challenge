@@ -27,7 +27,7 @@ git clone git@github.com:matheusads/koper_tech_challenge.git
 
 Make a virtualenv with at least Python 3.6
 ```
-python3 -m venv
+python3 -m venv venv
 ```
 
 Activate virtualenv
