@@ -66,15 +66,15 @@ requests as in Postman Collection (recommended). For lot of data I would make a 
 We need to add some _points(vertexes)_ to a _map(graph)_ and _connect(edges_) the points.
 
 At ``/vertex`` POST should send through body request some data like this `{'name': 'A', 
-                                                                            graph_id: 'Map Name'}`
-**_Name_**: A string field with 10 characters max length. This will be a place in map. 
-_**Graph_ID**_: A string field with 20 characters max length. This will be the 'map name'
+                                                                            graph_id: 'Map Name'}`\
+**_Name_**: A string field with 10 characters max length. This will be a place in map.\
+_**Graph_ID**_: A string field with 20 characters max length. This will be the 'map name'  
 
 At ``/edge`` POST should send some like this `{'source_id': 'A', 'destination_id': 'B', 
                                                 'weight': 10, 'graph_id': 'Map Name'}`    
 
-**_Source_id_** and Destination_id: The names of two connected points. Char Field 10 max length.
-**_Graph_ID_**: Same as `/vertex`
+**_Source_id_** and Destination_id: The names of two connected points. Char Field 10 max length.\
+**_Graph_ID_**: Same as `/vertex`\
 **_Weight_**: Integer field, is the 'distance' between these two points.
 
 I didn't add unit tests for these endpoints because is a 'simply' code of DRF. Just put to have Browsable APIs
@@ -85,8 +85,8 @@ and fast way to add data. But have some test in [Postman](https://github.com/mat
 At ``/routes`` we only have GET method and need send the follow query params
 `{'map': 'Mapa SP', 'source': 'A', 'dest': 'D', 'range': 10, 'price': 2.5 }`
 
-**_Map_**, **_source_** and **_dest_** is the previously graph_id, source_id(vertex name) and destination_id(second vertex name).
-**_Range_** is the range average car capacity per liters. Decimal field, so can pass almost any type of number.   
+**_Map_**, **_source_** and **_dest_** is the previously graph_id, source_id(vertex name) and destination_id(second vertex name). \
+**_Range_** is the range average car capacity per liters. Decimal field, so can pass almost any type of number. \
 **_Price_** is the fuel's value per liter. Also Decimal field.
 All these fields are **required** and **validate**.
 
@@ -106,5 +106,5 @@ I choose code readability so the Graph, Vertex and Edge representations could be
 but thinking in who will read I opt for this way.
 
 For the sake of simplicity of these project I also didn't use git branches.
-My commit are have a lot of code too. In real case it should be with small pieces of code.
+My commits have a lot of code too. In real case it should be with small pieces of code.
 
